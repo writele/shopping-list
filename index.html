@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="main.css">
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
 	<script src="app.js"></script></script>
 </head>
 <body>
@@ -17,20 +18,14 @@
      
         <div id="add_content">
            <form>
-
            <p>
             <input type="button" name="additembtn" id="additem" value="Add Item">
             <input type="textbox" name="additem" id="additemval">
             </p>
-            <p>
-            <input type="button" name="addcatbtn" id="addcat" value="Add Category">
-            <input type="textbox" name="addcat" id="addcatval">
-            </p> 
             </form>
        </div>
        
-       <div id="list">
-        <div class="category"><h1>Produce</h1></div>
+       <div id="list" class="sortable">
         <div class="item">
            <h1>Apples</h1>
             <div class="btn">Done!</div>
@@ -40,7 +35,9 @@
             <div class="btn">Done!</div>
             <div class="dlt">Delete</div>
             </div>
+
         </div>
+
 
    </article>
 </body>

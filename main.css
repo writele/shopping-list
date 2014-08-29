@@ -1,8 +1,12 @@
+/**** POSITIONING ****/
+header, #content, #add_content, #list {
+    position: absolute; 
+    width: 100%;
+}
+
 header {
     background: lightgray;
-    width: 100%;
     height: 75px;
-    position: absolute;
 }
     
 header h1 {
@@ -13,15 +17,17 @@ header h1 {
 }
   
 #content {
-    width: 100%;
-    position: absolute;
     top: 80px;
 }
     
 #add_content {
-    position: absolute;
     top: 0;
-    height: 100px;
+    height: 75px;
+}
+
+#list {
+    top: 80px;
+    background: lightblue;
 }
     
 /****** FORM ********/
@@ -32,30 +38,18 @@ form {
 }
 
 input {
-    display: block; 
     width: 200px;
     border: 2px solid black;
     font-size: 1.5em;
 }
 
 #additemval {
-    margin: 10px 0 0 150px;
-}
-
-#addcatval {
-    margin: 15px 0 0 150px;
+    margin: 20px 0 0 170px;
 }
 
 #additem {
-    margin: 10px 0 0 15px;
-}
-
-#addcat {
-     margin: 25px 0 0 15px;   
-}
-
-#additem, #addcat {
     position: absolute;
+    margin: 20px 0 0 25px;
 /* BUTTON STYLING */
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -109,14 +103,7 @@ input {
 
 /****** LIST ******/
 
-#list {
-    position: absolute;
-    top: 100px;
-    width: 100%;
-    background: lightblue;
-}
-
-       
+   
 .category, .item {
     height: 45px;
     border: 1px black solid;

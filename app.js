@@ -1,5 +1,8 @@
 $(document).ready(function () {
     
+      $(function() {
+    $( ".sortable" ).sortable();
+  });
     
     $("#additem")
       .click(function () {
