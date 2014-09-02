@@ -132,6 +132,9 @@ input {
 }
 
 /*** BUTTTONS ***/
+.btn, .dlt {
+    cursor: default;    
+}
 
 .btn {
 	font-size:16px;

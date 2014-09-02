@@ -1,29 +1,25 @@
 $(document).ready(function () {
-    
+//Drag and drop items
       $(function() {
     $( ".sortable" ).sortable();
   });
-    
+//Add new items
     $("#additem")
-      .click(function () {
-          
+      .click(function () {       
     var $value = $("#additemval").val();
     var $newitem = $("<div class='item'><h1>" + $value + "</h1><div class='btn'>Done!</div><div class='dlt'>Delete</div></div>");
-    //on button click, add item variable
     $("#list").append($newitem); 
-      });
-    
-    //on done click, strikethough item
-    $(".btn")
-        .on("click", function () {      $(this).prev().toggleClass("done"); 
-        });
-    
-   //on delete click, remove item
-    $(".dlt")
-        .on("click", function () {
-        $(this).parent().remove();  
-        });
-
+//Mark item done and delete item (Button Events)
+function buttonDone (event) {
+    $(this).prev().toggleClass("done"); 
+};    
+function buttonDelete (event) {               
+    $(this).parent().remove(); 
+};
+$(".btn")
+        .on("click", buttonDone);
+$(".dlt")
+        .on("click", buttonDelete);
+      
+      }); 
 });
-    
-    
