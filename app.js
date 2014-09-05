@@ -1,14 +1,21 @@
 $(document).ready(function () {
 //Drag and drop items
-      $(function() {
+$(function() {
     $( ".sortable" ).sortable();
   });
 //Add new items
-    $("#additem")
-      .click(function () {       
+function addItem () {       
     var $value = $("#additemval").val();
     var $newitem = $("<div class='item'><h1>" + $value + "</h1><div class='btn'>Done!</div><div class='dlt'>Delete</div></div>");
-    $("#list").append($newitem); 
+    $("#list").append($newitem); };
+
+$(document).on("click", "#additem", addItem);
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+    e.preventDefault();
+    addItem();
+    }
+});
 //Mark item done and delete item (Button Events)
 function buttonDone (event) {
     $(this).prev().toggleClass("done"); 
@@ -16,10 +23,8 @@ function buttonDone (event) {
 function buttonDelete (event) {               
     $(this).parent().remove(); 
 };
-$(".btn")
-        .on("click", buttonDone);
-$(".dlt")
-        .on("click", buttonDelete);
+$(document).on("click", ".btn", buttonDone);
+$(document).on("click", ".dlt", buttonDelete);
       
-      }); 
+ 
 });
